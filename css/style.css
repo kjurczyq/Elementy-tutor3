@@ -3,22 +3,24 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  //   height: 100vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: rgb(31, 30, 30);
   overflow: hidden;
 }
+
 .cards {
   position: relative;
   margin: 20px 30px;
   width: 350px;
   height: 400px;
-  perspective: 400px; //nadawanie glebi animacji
+  perspective: 400px;
 }
+
 .card {
   width: 100%;
   height: 100%;
@@ -27,15 +29,19 @@ body {
   border-radius: 15px;
   transition: 0.8s;
 }
+
 .card1 {
   background-image: url(/cat-g70d4963bb_1280.jpg);
 }
+
 .card2 {
   background-image: url(/road-gf3c03ec5a_1280.jpg);
 }
+
 .card3 {
   background-image: url(/zebra-ge17f129b9_1280.jpg);
 }
+
 .text {
   position: absolute;
   top: 0;
@@ -43,51 +49,76 @@ body {
   right: 0;
   bottom: 0;
   padding: 10px;
-  background-image: linear-gradient(
-    315deg,
-    rgb(233, 223, 223) 50%,
-    rgb(195, 174, 195) 97%
-  );
+  background-image: linear-gradient(315deg, rgb(233, 223, 223) 50%, rgb(195, 174, 195) 97%);
   border-radius: 15px;
   transition: 0.8s;
   opacity: 0;
 }
+
 h3 {
   text-align: center;
   margin-top: 160px;
   margin-bottom: 20px;
 }
+
 .text1 {
   transform: rotateX(-180deg);
 }
+
 .cards:hover .text {
   transform: rotate(0);
   opacity: 1;
 }
+
 .cards:hover .card1 {
   transform: rotateX(180deg);
   opacity: 0;
 }
+
 .text2 {
   transform: rotateY(-180deg);
 }
+
 .cards:hover .text {
   transform: rotate(0);
   opacity: 1;
 }
+
 .cards:hover .card2 {
   transform: rotateY(-180deg);
   opacity: 0;
 }
+
 .text3 {
   transform: rotateY(-180deg);
 }
+
 .cards:hover .card3 {
-  animation: up 0.8s;
+  -webkit-animation: up 0.8s;
+          animation: up 0.8s;
 }
+
 .cards:hover .text3 {
-  animation: down 0.8s;
+  -webkit-animation: down 0.8s;
+          animation: down 0.8s;
 }
+
+@-webkit-keyframes up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-60%);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes up {
   0% {
     transform: translateY(0);
@@ -101,6 +132,19 @@ h3 {
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes down {
+  0% {
+    transform: translateY(0);
+    z-index: -1;
+  }
+  50% {
+    transform: translateY(60%);
+    z-index: -1;
+  }
+  100% {
+    z-index: 1;
   }
 }
 @keyframes down {
@@ -119,14 +163,13 @@ h3 {
 .box {
   display: flex;
   position: absolute;
-  //   justify-content: center;
-  //   align-items: center;
   margin-top: 600px;
   padding: 20px 140px;
   border-radius: 15px;
   background-color: black;
-  box-shadow: 0 0 14px rgb(0, 140, 255, 0.6);
+  box-shadow: 0 0 14px rgba(0, 140, 255, 0.6);
 }
+
 .link {
   position: relative;
   padding: 10px 20px;
@@ -134,9 +177,6 @@ h3 {
   color: rgb(60, 22, 251);
   text-decoration: none;
 }
-// .link:hover{
-//      cursor: none;
-// }
 
 .one::after {
   content: "";
@@ -150,11 +190,12 @@ h3 {
   transition: 0.3s;
   transform-origin: right;
 }
+
 .one:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
-//Drugi link
+
 .two::before,
 .two::after {
   content: "";
@@ -163,32 +204,37 @@ h3 {
   height: 0px;
   transition: 0.1s;
 }
+
 .two::before {
   top: 4px;
   left: 4px;
   border-top: 0px solid white;
   border-left: 0px solid white;
 }
+
 .two::after {
   bottom: 4px;
   right: 4px;
   border-bottom: 0px solid white;
   border-right: 0px solid white;
 }
+
 .two:hover:before,
 .two:hover:after {
   width: 20px;
   height: 20px;
 }
+
 .two:hover::before {
   border-top: 2px solid white;
   border-left: 2px solid white;
 }
+
 .two:hover::after {
   border-bottom: 2px solid white;
   border-right: 2px solid white;
 }
-//link nr 3
+
 .three::before,
 .three::after {
   content: "";
@@ -199,20 +245,24 @@ h3 {
   background-color: white;
   transition: 0.3s;
 }
+
 .three::before {
   right: 50%;
 }
+
 .three::after {
   left: 50%;
 }
+
 .three:hover::before,
 .three:hover:after {
   width: 50%;
 }
-//czwarty link
+
 .four {
   z-index: 1;
 }
+
 .four::after {
   content: "";
   position: absolute;
@@ -223,20 +273,22 @@ h3 {
   height: 0px;
   transition: 0.3s;
 }
+
 .four:hover {
   color: black;
 }
+
 .four:hover::after {
   height: 100%;
   z-index: -3;
 }
-////buttony
-///
+
 .btn {
   display: flex;
   position: absolute;
   top: 650px;
 }
+
 button {
   position: relative;
   padding: 10px 70px;
@@ -251,6 +303,7 @@ button {
   overflow: hidden;
   transition: 0.3s;
 }
+
 button::before,
 button::after {
   display: block;
@@ -259,23 +312,26 @@ button::after {
   transition: 0.5s;
   z-index: -1;
 }
+
 .span1,
 .span2 {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
 .slide::before {
   border-left: 3px solid white;
   top: 0;
   left: -5px;
   height: 100%;
-  // width: 3px;
 }
+
 .slide:hover::before {
   border-left: 3px solid white;
   left: 160px;
 }
+
 .slide::after {
   border-bottom: 3px solid white;
   top: -10px;
@@ -283,102 +339,118 @@ button::after {
   width: 100%;
   transition-delay: 0.1s;
 }
+
 .slide:hover::after {
   border-bottom: 3px solid white;
   top: 60px;
 }
+
 .span1 {
   left: 50%;
   transition: 0.5s;
 }
-.span2{
+
+.span2 {
   left: -50%;
-  transition: 0.5s .1s;
+  transition: 0.5s 0.1s;
 }
-.slide:hover .span1{
-     left: 150%;
+
+.slide:hover .span1 {
+  left: 150%;
 }
-.slide:hover .span2{
-     left: 50%;
+
+.slide:hover .span2 {
+  left: 50%;
 }
-//Slice button
-.slice::before{
-     position: absolute;
-     width: 0;
-     height: 56%;
-     background-color: aliceblue;
-     left: 0px;
-     top: 0px;
-     transition: .3s;
+
+.slice::before {
+  position: absolute;
+  width: 0;
+  height: 56%;
+  background-color: aliceblue;
+  left: 0px;
+  top: 0px;
+  transition: 0.3s;
 }
-.slice::after{
-     position: absolute;
-     width: 0;
-     height: 20px;
-     background-color: aliceblue;
-     right: 0px;
-     bottom: 0px;  
-     transition: .3s; 
+
+.slice::after {
+  position: absolute;
+  width: 0;
+  height: 20px;
+  background-color: aliceblue;
+  right: 0px;
+  bottom: 0px;
+  transition: 0.3s;
 }
+
 .slice:hover::before,
-.slice:hover::after{
-     width: 100%;
+.slice:hover::after {
+  width: 100%;
 }
-.slice:hover{
-     color: black;
+
+.slice:hover {
+  color: black;
 }
-//przycisk hmm
-.hmm{
-     border: none;
-     transition: .5s;
+
+.hmm {
+  border: none;
+  transition: 0.5s;
 }
-.hmm:hover{
-     box-shadow: 3px 2px 0 0 rgb(248, 242, 242), inset 11px 6px 10px rgb(25, 25, 25);
+
+.hmm:hover {
+  box-shadow: 3px 2px 0 0 rgb(248, 242, 242), inset 11px 6px 10px rgb(25, 25, 25);
 }
-//przycisk border
-.border{
-     border-radius: 0;
-     overflow: visible;
-     transition: .8s;
+
+.border {
+  border-radius: 0;
+  overflow: visible;
+  transition: 0.8s;
 }
+
 .border::after,
-.border::before{
-     width: 100%;
-     height: 100%;
+.border::before {
+  width: 100%;
+  height: 100%;
 }
-.border::before{
-     top: 0;
-     left: 0;
+
+.border::before {
+  top: 0;
+  left: 0;
 }
-.border::after{
-bottom: 0;
-right: 0;
+
+.border::after {
+  bottom: 0;
+  right: 0;
 }
-.border:hover:after{
-     bottom: -10px;
-     right: -10px;
-     border-bottom: 5px solid greenyellow;
-     border-right: 5px solid greenyellow;
+
+.border:hover:after {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 5px solid greenyellow;
+  border-right: 5px solid greenyellow;
 }
-.border:hover::before{
-     top: -10px;
-     left: -10px;
-     border-top: 5px solid greenyellow;
-     border-left: 5px solid greenyellow;
+
+.border:hover::before {
+  top: -10px;
+  left: -10px;
+  border-top: 5px solid greenyellow;
+  border-left: 5px solid greenyellow;
 }
-.border:hover{
-     border: 1px solid transparent;
-     color: greenyellow;
+
+.border:hover {
+  border: 1px solid transparent;
+  color: greenyellow;
 }
-//button glass
-.glass::before{
-     top: -30px;
-     left: -130px;
-     height: 260%;
-     width: 100px;
-     background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.0));
-     transform: rotate(20deg);
+
+.glass::before {
+  top: -30px;
+  left: -130px;
+  height: 260%;
+  width: 100px;
+  background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transform: rotate(20deg);
 }
-.glass:hover::before{
-     left: 130%;
-}
+
+.glass:hover::before {
+  left: 130%;
+}/*# sourceMappingURL=style.css.map */

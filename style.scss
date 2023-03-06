@@ -291,94 +291,99 @@ button::after {
   left: 50%;
   transition: 0.5s;
 }
-.span2{
+.span2 {
   left: -50%;
-  transition: 0.5s .1s;
+  transition: 0.5s 0.1s;
 }
-.slide:hover .span1{
-     left: 150%;
+.slide:hover .span1 {
+  left: 150%;
 }
-.slide:hover .span2{
-     left: 50%;
+.slide:hover .span2 {
+  left: 50%;
 }
 //Slice button
-.slice::before{
-     position: absolute;
-     width: 0;
-     height: 56%;
-     background-color: aliceblue;
-     left: 0px;
-     top: 0px;
-     transition: .3s;
+.slice::before {
+  position: absolute;
+  width: 0;
+  height: 56%;
+  background-color: aliceblue;
+  left: 0px;
+  top: 0px;
+  transition: 0.3s;
 }
-.slice::after{
-     position: absolute;
-     width: 0;
-     height: 20px;
-     background-color: aliceblue;
-     right: 0px;
-     bottom: 0px;  
-     transition: .3s; 
+.slice::after {
+  position: absolute;
+  width: 0;
+  height: 20px;
+  background-color: aliceblue;
+  right: 0px;
+  bottom: 0px;
+  transition: 0.3s;
 }
 .slice:hover::before,
-.slice:hover::after{
-     width: 100%;
+.slice:hover::after {
+  width: 100%;
 }
-.slice:hover{
-     color: black;
+.slice:hover {
+  color: black;
 }
 //przycisk hmm
-.hmm{
-     border: none;
-     transition: .5s;
+.hmm {
+  border: none;
+  transition: 0.5s;
 }
-.hmm:hover{
-     box-shadow: 3px 2px 0 0 rgb(248, 242, 242), inset 11px 6px 10px rgb(25, 25, 25);
+.hmm:hover {
+  box-shadow: 3px 2px 0 0 rgb(248, 242, 242),
+    inset 11px 6px 10px rgb(25, 25, 25);
 }
 //przycisk border
-.border{
-     border-radius: 0;
-     overflow: visible;
-     transition: .8s;
+.border {
+  border-radius: 0;
+  overflow: visible;
+  transition: 0.8s;
 }
 .border::after,
-.border::before{
-     width: 100%;
-     height: 100%;
+.border::before {
+  width: 100%;
+  height: 100%;
 }
-.border::before{
-     top: 0;
-     left: 0;
+.border::before {
+  top: 0;
+  left: 0;
 }
-.border::after{
-bottom: 0;
-right: 0;
+.border::after {
+  bottom: 0;
+  right: 0;
 }
-.border:hover:after{
-     bottom: -10px;
-     right: -10px;
-     border-bottom: 5px solid greenyellow;
-     border-right: 5px solid greenyellow;
+.border:hover:after {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 5px solid greenyellow;
+  border-right: 5px solid greenyellow;
 }
-.border:hover::before{
-     top: -10px;
-     left: -10px;
-     border-top: 5px solid greenyellow;
-     border-left: 5px solid greenyellow;
+.border:hover::before {
+  top: -10px;
+  left: -10px;
+  border-top: 5px solid greenyellow;
+  border-left: 5px solid greenyellow;
 }
-.border:hover{
-     border: 1px solid transparent;
-     color: greenyellow;
+.border:hover {
+  border: 1px solid transparent;
+  color: greenyellow;
 }
 //button glass
-.glass::before{
-     top: -30px;
-     left: -130px;
-     height: 260%;
-     width: 100px;
-     background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.0));
-     transform: rotate(20deg);
+.glass::before {
+  top: -30px;
+  left: -130px;
+  height: 260%;
+  width: 100px;
+  background-image: linear-gradient(
+    -90deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  transform: rotate(20deg);
 }
-.glass:hover::before{
-     left: 130%;
+.glass:hover::before {
+  left: 130%;
 }
